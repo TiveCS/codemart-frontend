@@ -1,0 +1,27 @@
+---
+type ButtonType = 'primary' | 'outline' | 'text';
+
+export interface Props {
+  type?: ButtonType;
+}
+
+const { type = 'primary' } = Astro.props as Props;
+---
+
+<button class={`btn btn-${type}`}>
+  <slot/>
+</button>
+
+<style>
+  @tailwind components;
+
+  @layer components {
+		.btn {
+			@apply rounded-md px-8 py-2 text-sm
+		}
+
+		.btn-primary {
+			@apply bg-recandy-blue-600 text-recandy-white-0 hover:bg-recandy-blue-700
+		}
+	}
+</style>
