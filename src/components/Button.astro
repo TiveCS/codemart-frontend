@@ -17,11 +17,19 @@ const { type = 'primary' } = Astro.props as Props;
 
   @layer components {
 		.btn {
-			@apply rounded-md px-8 py-2 text-sm
+			@apply rounded-md px-8 py-2 text-sm font-medium
 		}
 
 		.btn-primary {
 			@apply bg-recandy-blue-600 text-recandy-white-0 hover:bg-recandy-blue-700
 		}
+
+    .btn-outline {
+      @apply border border-recandy-blue-600 text-recandy-blue-600 hover:bg-recandy-blue-600 hover:text-recandy-white-0
+    }
+
+    .btn-text {
+      @apply text-recandy-blue-600 hover:bg-recandy-blue-600 hover:text-recandy-white-0
+    }
 	}
 </style>
