@@ -5,26 +5,22 @@ import Button from "./Button.astro";
 
 <nav class="flex flex-row justify-between py-4 px-32 border-b shadow-md">
   <div class="flex flex-row justify-center items-center space-x-16">
-    <a href="#">
+    <a href="./">
       <img src="/assets/logo-colored.svg" alt="CodeMart">
     </a>
 
     <div class="flex flex-row justify-between space-x-8 text-sm">
-      <a href="#">Home</a>
-      <a href="#">Sell Product</a>
-      <a href="#">Browse</a>
+      <a href="./">Home</a>
+      <a href="./sell">Sell Product</a>
+      <a href="./browse">Browse</a>
     </div>
   </div>
   <div class="flex flex-row justify-between items-center space-x-8">
-    <a href="/login">
-      <Button type={"text"}>Login</Button>
+    <a href="./login">
+      <Button textSize={"sm"} type={"text"}>Login</Button>
     </a>
-    <a href="#">
-      <Button>Join Now</Button>
+    <a href="./register">
+      <Button textSize={"sm"}>Join Now</Button>
     </a>
   </div>
 </nav>
-
-<style>
-  
-</style>

@@ -1,0 +1,25 @@
+---
+
+export interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props as Props;
+
+const imgUrl = `/assets/icons/${icon}.svg`;
+
+---
+
+<div class="flex flex-col space-y-4">
+  <div class="flex flex-row space-x-4">
+    <img src={imgUrl} alt="" />
+
+    <h4 class="text-2xl font-medium">{ title }</h4>
+  </div>
+
+  <p class="leading-relaxed">
+    { description }
+  </p>
+</div>
