@@ -1,7 +1,44 @@
 ---
+import Button from '../components/Button.astro';
+import FormInput from '../components/forms/FormInput.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="CodeMart">
-	
+  <section id="hero" class="flex flex-row justify-between items-center my-24 px-32">
+    <div class="max-w-2xl flex flex-col space-y-8">
+      <div class="space-y-4">
+        <h1 class="!leading-snug text-5xl font-bold">
+          Explore <span class="text-recandy-blue-600">Source Code</span> for your Business <span class="text-recandy-blue-600">Needs</span>
+        </h1>
+        
+        <p class="text-recanndy-gray-900 max-w-lg">CodeMart is Source Code marketplace that allow Developer post their works and Customer to buy Developer code based on their needs and requirements.</p>
+      </div>
+      <div class="space-x-8">
+        <Button>Buy a Source Code</Button>
+        <Button type={"outline"}>I'm a Developer</Button>
+      </div>
+    </div>
+    <div>
+      <img src="/assets/img/codemart_explore.svg" alt="Explore">
+    </div>
+  </section>
+
+  <section id="contact-us" class="py-32 px-32 bg-recandy-blue-100 flex flex-row justify-between items-center">
+
+    <div>
+      <h3 class="font-semibold text-4xl">Stay in Touch with Us</h3>
+      <br/>
+      <p class="text-recanndy-gray-900">Ask us question so we can help you</p>
+    </div>
+ 
+    <form action="" class="flex flex-col space-y-8 bg-recandy-white-0 rounded-md drop-shadow-xl px-8 py-8 w-1/3">
+      <FormInput placeholder={"Full Name"} />
+      <FormInput placeholder={"Email"} />
+      <FormInput placeholder={"Phone Number"} />
+      <FormInput placeholder={"Subject"} />
+      <Button>Submit</Button>
+    </form>
+
+  </section>
 </Layout>
