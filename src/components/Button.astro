@@ -3,12 +3,13 @@ type ButtonType = 'primary' | 'outline' | 'text';
 
 export interface Props {
   type?: ButtonType;
+  size?: 'normal' | 'large';
 }
 
-const { type = 'primary' } = Astro.props as Props;
+const { type = 'primary', size = 'normal' } = Astro.props as Props;
 ---
 
-<button class={`btn btn-${type}`}>
+<button class={`btn btn-${type} btn-size-${size}`}>
   <slot/>
 </button>
 
@@ -19,6 +20,10 @@ const { type = 'primary' } = Astro.props as Props;
 		.btn {
 			@apply rounded-md px-8 py-2 text-sm font-medium
 		}
+
+    .btn-size-large {
+      @apply !py-3
+    }
 
 		.btn-primary {
 			@apply bg-recandy-blue-600 text-recandy-white-0 hover:bg-recandy-blue-700
