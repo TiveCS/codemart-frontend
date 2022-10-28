@@ -1,0 +1,24 @@
+---
+import ProductCard from "../components/pages/browse/ProductCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="CodeMart | Browse Products">
+
+  <main class="bg-recandy-white-50 px-32 py-32">
+
+    <section id="products" class="flex flex-row">
+
+      <ProductCard
+       author="Rehoukrel Studio" 
+       category={['Astro', 'TailwindCSS', 'React.js']}
+       title="Login Page Template"
+       image="Product_Login_Web.jpg"
+      />
+
+    </section>
+
+  </main>
+
+</Layout>
