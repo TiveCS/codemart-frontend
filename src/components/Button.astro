@@ -3,45 +3,75 @@ type ButtonType = 'primary' | 'outline' | 'text';
 
 export interface Props {
   type?: ButtonType;
-  size?: 'normal' | 'medium' | 'large';
+  size?: 'small' | 'normal' | 'medium' | 'large';
   textSize?: 'sm' | 'base' | 'md' | 'lg';
+  btnWidth?: 'auto' | 'full' | 'half' | 'third' | 'quarter';
 }
 
-const { type = 'primary', size = 'normal', textSize = 'base' } = Astro.props as Props;
+const {
+  type = 'primary',
+  size = 'normal',
+  textSize = 'base',
+  btnWidth = 'auto',
+} = Astro.props as Props;
 ---
 
-<button class={`btn btn-${type} btn-size-${size} text-${textSize}`}>
-  <slot/>
+<button
+  class={`btn btn-${type} btn-size-${size} text-${textSize} btn-w-${btnWidth}`}
+>
+  <slot />
 </button>
 
 <style>
   @tailwind components;
 
   @layer components {
-		.btn {
-			@apply rounded-md px-8 py-2 font-medium
-		}
+    .btn {
+      @apply rounded-md px-8 py-2 font-medium;
+    }
 
-    
+    .btn-w-auto {
+      @apply !w-auto;
+    }
+
+    .btn-w-full {
+      @apply !w-full;
+    }
+
+    .btn-w-half {
+      @apply !w-1/2;
+    }
+
+    .btn-w-third {
+      @apply !w-1/3;
+    }
+
+    .btn-w-quarter {
+      @apply !w-1/4;
+    }
+
+    .btn-size-small {
+      @apply !px-6 !py-2;
+    }
 
     .btn-size-large {
-      @apply !py-3
+      @apply !py-3;
     }
 
     .btn-size-medium {
-      @apply !py-2.5
+      @apply !py-2.5;
     }
 
-		.btn-primary {
-			@apply bg-recandy-blue-600 text-recandy-white-0 hover:bg-recandy-blue-700
-		}
+    .btn-primary {
+      @apply bg-recandy-blue-600 text-recandy-white-0 hover:bg-recandy-blue-700;
+    }
 
     .btn-outline {
-      @apply border border-recandy-blue-600 text-recandy-blue-600 hover:bg-recandy-blue-600 hover:text-recandy-white-0
+      @apply border border-recandy-blue-600 text-recandy-blue-600 hover:bg-recandy-blue-600 hover:text-recandy-white-0;
     }
 
     .btn-text {
-      @apply text-recandy-blue-600 hover:bg-recandy-blue-600 hover:text-recandy-white-0
+      @apply text-recandy-blue-600 hover:bg-recandy-blue-600 hover:text-recandy-white-0;
     }
-	}
+  }
 </style>
