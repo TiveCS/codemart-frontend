@@ -6,12 +6,13 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="CodeMart | Login">
-    <div class="bg-recandy-white-100 py-32 pl-96 flex flex-row justify-between items-center">
-        <form action="" class="shadow-lg flex flex-col space-y-4 bg-recandy-white-0 px-8 py-12 w-1/2">
+    <div class="bg-recandy-white-100 py-32 flex flex-row justify-center items-center">
+        <form action="" class="shadow-lg flex flex-col space-y-4 bg-recandy-white-0 px-8 py-12 w-1/3">
             <h1 class="text-center font-bold text-2xl">Welcome Back</h1>
             <p class="text-center tracking-wide">Enter your credentials to access your account</p>
+            <br>
             <FormInput placeholder={"Email Address"}/>
-            <FormInput placeholder={"Password"}/>
+            <FormInput type={'password'} placeholder={"Password"}/>
             <Button size={"large"}>Log in</Button> 
         </form>
     </div>
