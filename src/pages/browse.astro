@@ -1,0 +1,62 @@
+---
+import ProductCard from '../components/pages/browse/ProductCard.astro';
+import SearchBar from '../components/pages/browse/SearchBar.astro';
+import Sidebar from '../components/pages/browse/Sidebar.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='CodeMart | Browse Products'>
+  <main class='flex flex-row justify-between bg-recandy-white-50 px-32 py-16'>
+    <Sidebar />
+
+    <div class='w-3/4'>
+      <SearchBar />
+
+      <section
+        id='products'
+        class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <ProductCard
+          author='BlueRecandy'
+          categories={['Astro', 'TailwindCSS']}
+          title='Login Page Template'
+          image='Product_Login_Web.jpg'
+        />
+
+        <ProductCard
+          author='TiveCS'
+          categories={['React.js', 'TailwindCSS']}
+          title='Login Page Template'
+          image='Product_Portofolio_Web.jpg'
+        />
+
+        <ProductCard
+          author='Vektora Studio'
+          categories={['HTML', 'TailwindCSS', 'Figma']}
+          title='Login Page Template'
+          image='Product_Fashion_Landing.png'
+        />
+
+        <ProductCard
+          author='Rehoukrel Studio'
+          categories={['Nest.js', 'TailwindCSS', 'Vue.js']}
+          title='REPIM Rest API Modeller App'
+          image='Product_REPIM_Web.jpg'
+        />
+
+        <ProductCard
+          author='Damian Schute'
+          categories={['Laravel', 'TailwindCSS', 'React.js']}
+          title='Traveling Web App'
+          image='Product_Travel_Web.png'
+        />
+
+        <ProductCard
+          author='Lestaris Studios'
+          categories={['Android', 'Jetpack', 'Kotlin']}
+          title='Fashion Store Mobile App'
+          image='Product_Lestari_Studios_Mobile.png'
+        />
+      </section>
+    </div>
+  </main>
+</Layout>
