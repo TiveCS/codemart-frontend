@@ -1,26 +1,29 @@
 ---
 import Button from '../../Button.astro';
+import Category from './Category.astro';
 
 export interface Props {
   title: string;
   image: string;
-  category: string[];
+  categories: string[];
   author: string;
   price?: number;
 }
 
-const { title, image, category, author, price = 0 } = Astro.props as Props;
+const { title, image, categories, author, price = 0 } = Astro.props as Props;
 ---
 
-<div class='bg-recandy-white-0 shadow-xl h-96 w-1/3'>
+<div class='bg-recandy-white-0 shadow-xl pb-3'>
   <div class='h-1/2'>
     <img class='h-full w-full' src={`/assets/img/${image}`} alt='' />
   </div>
 
   <div class='h-1/2'>
-    <div class='h-1/3'></div>
+    <div class='h-1/3 ml-3 mt-2 flex flex-row flex-wrap items-center space-x-2'>
+      {categories.map((category) => <Category>{category}</Category>)}
+    </div>
 
-    <div class='flex flex-col justify-between h-2/3 px-4 py-4'>
+    <div class='flex flex-col justify-between h-2/3 px-4 py-4 space-y-4'>
       <a href='#'>
         <p class='text-xs text-recandy-gray-800'>{author}</p>
       </a>
@@ -30,7 +33,7 @@ const { title, image, category, author, price = 0 } = Astro.props as Props;
       </a>
 
       <div class='flex flex-row items-center justify-between'>
-        <p class='text-recandy-blue-700'>${price}</p>
+        <p class='text-recandy-blue-700 text-sm'>${price}</p>
 
         <Button size={'small'} textSize={'sm'}>Show Details</Button>
       </div>

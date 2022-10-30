@@ -12,47 +12,49 @@ import Layout from '../layouts/Layout.astro';
     <div class='w-3/4'>
       <SearchBar />
 
-      <section id='products' class='flex flex-row flex-wrap'>
+      <section
+        id='products'
+        class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         <ProductCard
-          author='Rehoukrel Studio'
-          category={['Astro', 'TailwindCSS', 'React.js']}
+          author='BlueRecandy'
+          categories={['Astro', 'TailwindCSS']}
           title='Login Page Template'
           image='Product_Login_Web.jpg'
         />
 
         <ProductCard
           author='TiveCS'
-          category={['Astro', 'TailwindCSS', 'React.js']}
+          categories={['React.js', 'TailwindCSS']}
           title='Login Page Template'
           image='Product_Portofolio_Web.jpg'
         />
 
         <ProductCard
           author='Vektora Studio'
-          category={['Astro', 'TailwindCSS', 'React.js']}
+          categories={['HTML', 'TailwindCSS', 'Figma']}
           title='Login Page Template'
           image='Product_Fashion_Landing.png'
         />
 
         <ProductCard
           author='Rehoukrel Studio'
-          category={['Astro', 'TailwindCSS', 'React.js']}
-          title='Login Page Template'
-          image='Product_Login_Web.jpg'
+          categories={['Nest.js', 'TailwindCSS', 'Vue.js']}
+          title='REPIM Rest API Modeller App'
+          image='Product_REPIM_Web.jpg'
         />
 
         <ProductCard
-          author='TiveCS'
-          category={['Astro', 'TailwindCSS', 'React.js']}
-          title='Login Page Template'
-          image='Product_Portofolio_Web.jpg'
+          author='Damian Schute'
+          categories={['Laravel', 'TailwindCSS', 'React.js']}
+          title='Traveling Web App'
+          image='Product_Travel_Web.png'
         />
 
         <ProductCard
-          author='Vektora Studio'
-          category={['Astro', 'TailwindCSS', 'React.js']}
-          title='Login Page Template'
-          image='Product_Fashion_Landing.png'
+          author='Lestaris Studios'
+          categories={['Android', 'Jetpack', 'Kotlin']}
+          title='Fashion Store Mobile App'
+          image='Product_Lestari_Studios_Mobile.png'
         />
       </section>
     </div>
