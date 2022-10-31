@@ -12,10 +12,11 @@ export interface Props {
 
 const { title, image, categories, author, price = 0 } = Astro.props as Props;
 
+const priceTag = price === 0 ? 'Free' : `$${price}`;
 const imgSrc = `/codemart-frontend/assets/img/${image}`;
 ---
 
-<div class='bg-recandy-white-0 shadow-xl pb-3'>
+<div class='bg-recandy-white-0 shadow-2xl pb-3'>
   <div class='h-1/2'>
     <img class='h-full w-full' src={imgSrc} alt='' />
   </div>
@@ -35,7 +36,7 @@ const imgSrc = `/codemart-frontend/assets/img/${image}`;
       </a>
 
       <div class='flex flex-row items-center justify-between'>
-        <p class='text-recandy-blue-700 text-sm'>${price}</p>
+        <p class='text-recandy-blue-700 text-sm'>{priceTag}</p>
 
         <Button size={'small'} textSize={'sm'}>Show Details</Button>
       </div>
