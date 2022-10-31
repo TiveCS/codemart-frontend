@@ -1,7 +1,29 @@
 ---
+import SidebarCategory from './SidebarCategory.astro';
 ---
 
-<div
-  class='hidden md:block bg-recandy-white-0 shadow-xl h-screen w-1/5 px-4 py-4'>
-  <h6 class='font-medium text-xl text-recandy-black-700'>Filter by</h6>
+<div class='hidden md:block bg-recandy-white-0 shadow-xl h-auto w-1/5 px-4'>
+  <div class='mt-4'>
+    <h6 class='font-medium text-xl text-recandy-black-700'>Filter by</h6>
+  </div>
+
+  <SidebarCategory
+    title='Language'
+    categories={['JavaScript', 'Rust', 'PHP', 'Kotlin']}
+  />
+
+  <SidebarCategory
+    title='Database'
+    categories={['MySQL', 'PostgreSQL', 'MongoDB', 'Redis']}
+  />
+
+  <SidebarCategory
+    title='Framework'
+    categories={['Laravel', 'Nest.js', 'Next.js', 'Vue', 'React', 'Astro']}
+  />
+
+  <SidebarCategory
+    title='Architecture'
+    categories={['Monorepo', 'Serverless', 'Microservices', 'Monolithic']}
+  />
 </div>
