@@ -1,0 +1,12 @@
+---
+export interface Props {
+  src: string;
+  key: number;
+}
+
+const { src, key } = Astro.props as Props;
+---
+
+<div id={`content-${key}`} class="w-full">
+  <img src={src} alt={`${key}`} />
+</div>
