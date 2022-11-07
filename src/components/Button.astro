@@ -1,23 +1,26 @@
 ---
-type ButtonType = 'primary' | 'outline' | 'text';
+type ButtonType = "primary" | "outline" | "text";
 
 export interface Props {
   type?: ButtonType;
-  size?: 'small' | 'normal' | 'medium' | 'large';
-  textSize?: 'sm' | 'base' | 'md' | 'lg';
-  btnWidth?: 'auto' | 'full' | 'half' | 'third' | 'quarter';
+  size?: "small" | "normal" | "medium" | "large";
+  textSize?: "sm" | "base" | "md" | "lg";
+  btnWidth?: "auto" | "full" | "half" | "third" | "quarter";
+  onClick?: string | undefined;
 }
 
 const {
-  type = 'primary',
-  size = 'normal',
-  textSize = 'base',
-  btnWidth = 'auto',
+  type = "primary",
+  size = "normal",
+  textSize = "base",
+  btnWidth = "auto",
+  onClick = undefined,
 } = Astro.props as Props;
 ---
 
 <button
   class={`btn btn-${type} btn-size-${size} text-${textSize} btn-w-${btnWidth}`}
+  onclick={onClick}
 >
   <slot />
 </button>

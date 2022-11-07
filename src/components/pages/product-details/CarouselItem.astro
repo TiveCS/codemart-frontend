@@ -1,0 +1,20 @@
+---
+export interface Props {
+  src: string;
+  key: number;
+  active?: boolean;
+}
+
+const { src, key, active = false } = Astro.props as Props;
+
+const imgSrc = `/codemart-frontend/assets/img/${src}`;
+
+const activeClass = "w-full";
+const inactiveClass = "w-full hidden";
+
+const usedClass = active ? activeClass : inactiveClass;
+---
+
+<div id={`content-${key}`} class={usedClass}>
+  <img src={imgSrc} alt={`${key}`} />
+</div>
