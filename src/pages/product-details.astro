@@ -1,5 +1,6 @@
 ---
 import Button from "../components/Button.astro";
+import CarouselItem from "../components/pages/product-details/CarouselItem.astro";
 import Layout from "../layouts/Layout.astro";
 
 export interface Props {
@@ -14,9 +15,9 @@ const {
   title = "Portofolio Website Template",
   author = "John Doe",
   contents = [
-    "/codemart-frontend/assets/img/Product_Portofolio_Web.jpg",
-    "/codemart-frontend/assets/img/Product_Portofolio_2_Web.jpg",
-    "/codemart-frontend/assets/img/Product_Portofolio_3_Web.jpg",
+    "Product_Portofolio_Web.jpg",
+    "Product_Portofolio_2_Web.jpg",
+    "Product_Portofolio_3_Web.jpg",
   ],
   description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deserunt aspernatur sint corrupti qui ad saepe ipsa mollitia commodi autem sapiente magnam maiores labore obcaecati aut velit beatae doloremque numquam, harum placeat dolor recusandae. Architecto iste optio, neque earum debitis aliquam. Sequi ut beatae asperiores dolor. Ullam alias illo aut, delectus expedita, hic nesciunt placeat est consequuntur a fugit maxime.",
   price = 2000,
@@ -41,30 +42,21 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
     >
       <section id="slideshow-container" class="w-3/4 bg-slate-600 relative">
         <div id="contents">
-          <div id="content-1" class="w-full">
-            <img
-              src="/codemart-frontend/assets/img/Product_Portofolio_Web.jpg"
-              alt="1"
-            />
-          </div>
-          <div id="content-2" class="w-full hidden">
-            <img
-              src="/codemart-frontend/assets/img/Product_Portofolio_2_Web.jpg"
-              alt="2"
-            />
-          </div>
-          <div id="content-3" class="w-full hidden">
-            <img
-              src="/codemart-frontend/assets/img/Product_Portofolio_3_Web.jpg"
-              alt="3"
-            />
-          </div>
+          {
+            contents.map((content, index) => (
+              <CarouselItem
+                active={index === 0}
+                src={`${content}`}
+                key={index + 1}
+              />
+            ))
+          }
         </div>
 
         <div id="controls" class="flex inset-0 absolute">
           <div class="flex items-center justify-start w-1/2">
             <button
-              class="carousel-control-btn -ml-6"
+              class="carousel-control-btn -ml-16"
               onclick="changeSlide(false)"
             >
               <svg
@@ -84,7 +76,7 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
           </div>
           <div class="flex items-center justify-end w-1/2">
             <button
-              class="carousel-control-btn -mr-6"
+              class="carousel-control-btn -mr-16"
               onclick="changeSlide(true)"
             >
               <svg
@@ -151,13 +143,13 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
     }
   };
 
-  const autoSlide = () => {
-    setInterval(() => {
-      changeSlide(true);
-    }, 5000);
-  };
+  // const autoSlide = () => {
+  //   setInterval(() => {
+  //     changeSlide(true);
+  //   }, 5000);
+  // };
 
-  autoSlide();
+  // autoSlide();
 </script>
 
 <style>
@@ -165,7 +157,7 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
 
   @layer components {
     .carousel-control-btn {
-      @apply bg-recandy-white-50 rounded-full w-12 h-12 flex justify-center items-center inset-0 z-30 hover:bg-recandy-blue-600 hover:text-recandy-white-0 transition shadow-md;
+      @apply bg-recandy-blue-50 text-recandy-blue-800 rounded-full w-12 h-12 flex justify-center items-center inset-0 z-30 hover:bg-recandy-blue-600 hover:text-recandy-white-0 transition duration-300 shadow-md;
     }
   }
 </style>
