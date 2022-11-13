@@ -7,21 +7,13 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="CodeMart | Sell">
-  <div class="mx-60 my-24 px-4 py-5 sm:p-6">
+  <div class="bg-recandy-white-100 py-16 px-64">
     <div class="grid grid-cols-6 gap-6">
       <div class="col-span-6 sm:col-span-3">
         <p>Add Title*</p>
         <FormInput type={"text"} placeholder={"Add Title"} />
       </div>
       <div class="col-span-6 sm:col-span-3">
-        <!-- <p>Categories</p>
-        <FormInput type={"text"} placeholder={"Search Categories..."} />
-        <div class="flex flex-row justify-between mt-4">
-          <FilterButton>C++</FilterButton>
-          <FilterButton>JavaScript</FilterButton>
-          <FilterButton>Python</FilterButton>
-          <FilterButton>Java</FilterButton>
-        </div> -->
 
         <CategoryField client:idle>
           <FormInput
@@ -67,9 +59,3 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 </Layout>
-
-<script is:inline>
-  const categories = [];
-
-  $(document).ready(() => {});
-</script>
