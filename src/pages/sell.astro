@@ -1,44 +1,75 @@
 ---
 import Button from "../components/Button.astro";
 import FormInput from "../components/forms/FormInput.astro";
-import FilterButton from "../components/pages/sell-product/FilterButton.astro";
+import CategoryField from "../components/pages/sell-product/CategoryField.jsx";
+import FilterButton from "../components/pages/sell-product/FilterButton.jsx";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="CodeMart | Sell">
-    <div class="bg-recandy-white-100 py-24 px-64">
-        <div class="grid grid-cols-6 gap-6">
-            <div class="col-span-6 sm:col-span-3">
-                <p class="mb-2">Add Title*</p>
-                <FormInput type={'text'} placeholder={"Add Title"}/>
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-                <p class="mb-2">Categories</p>
-                <FormInput type={'text'} placeholder={"Search Categories..."}/>
-                <div class="flex flex-row justify-between mt-4">
-                    <FilterButton>C++</FilterButton>
-                    <FilterButton>JavaScript</FilterButton>
-                    <FilterButton>Python</FilterButton>
-                    <FilterButton>Java</FilterButton>
-                </div>
-            </div>
-        </div>
-        <div class="my-12">
-            <div class="border-2 border-dashed py-32 bah bg-recandy-gray-50 border-black w-1/2">
-                <div class="text-center flex flex-col justify-center items-center">
-                    <p>Drag and Drop</p>
-                    <p>Your File Hire</p>
-                </div>
-            </div>
-            <br>
-            <input type="file">
-        </div>
-        <div>
-            <p class="mb-2">Add Description*</p>
-            <textarea name="upload" id="" cols="120" rows="10" class="border border-recanndy-gray-50"></textarea>
-        </div>
-        <div class="mt-6">
-            <Button size={"medium"}>Upload</Button>
-        </div>
+  <div class="mx-60 my-24 px-4 py-5 sm:p-6">
+    <div class="grid grid-cols-6 gap-6">
+      <div class="col-span-6 sm:col-span-3">
+        <p>Add Title*</p>
+        <FormInput type={"text"} placeholder={"Add Title"} />
+      </div>
+      <div class="col-span-6 sm:col-span-3">
+        <!-- <p>Categories</p>
+        <FormInput type={"text"} placeholder={"Search Categories..."} />
+        <div class="flex flex-row justify-between mt-4">
+          <FilterButton>C++</FilterButton>
+          <FilterButton>JavaScript</FilterButton>
+          <FilterButton>Python</FilterButton>
+          <FilterButton>Java</FilterButton>
+        </div> -->
+
+        <CategoryField client:idle>
+          <FormInput
+            type={"text"}
+            placeholder={"Search Categories..."}
+            slot="field-slot"
+          />
+        </CategoryField>
+      </div>
     </div>
+
+    <br />
+    <br />
+
+    <div>
+      <div
+        class="border-2 border-dashed py-32 bah bg-recandy-gray-50 border-black w-1/2"
+      >
+        <div class="text-center flex flex-col justify-center items-center">
+          <p>Drag and Drop</p>
+          <p>Your File Hire</p>
+        </div>
+      </div>
+      <br />
+      <input type="file" />
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+      <p>Add Description*</p>
+      <textarea
+        name="upload"
+        class="border border-recanndy-gray-50 w-full h-48 rounded-sm"
+      ></textarea>
+    </div>
+
+    <br />
+
+    <div>
+      <Button id={"upload-btn"} size={"medium"}>Upload</Button>
+    </div>
+  </div>
 </Layout>
+
+<script is:inline>
+  const categories = [];
+
+  $(document).ready(() => {});
+</script>
