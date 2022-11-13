@@ -55,10 +55,7 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
 
         <div id="controls" class="flex inset-0 absolute">
           <div class="flex items-center justify-start w-1/2">
-            <button
-              class="carousel-control-btn -ml-16"
-              onclick="changeSlide(false)"
-            >
+            <button id="prev-btn" class="carousel-control-btn -ml-16">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -75,10 +72,7 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
             </button>
           </div>
           <div class="flex items-center justify-end w-1/2">
-            <button
-              class="carousel-control-btn -mr-16"
-              onclick="changeSlide(true)"
-            >
+            <button id="next-btn" class="carousel-control-btn -mr-16">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -142,6 +136,16 @@ const priceDisplay = price === 0 ? "Free" : `$${price}`;
       currentSlide = nextSlide;
     }
   };
+
+  $(document).ready(() => {
+    $("#next-btn").click(() => {
+      changeSlide(true);
+    });
+
+    $("#prev-btn").click(() => {
+      changeSlide(false);
+    });
+  });
 
   // const autoSlide = () => {
   //   setInterval(() => {
