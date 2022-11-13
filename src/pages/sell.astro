@@ -1,11 +1,12 @@
 ---
 import Button from "../components/Button.astro";
 import FormInput from "../components/forms/FormInput.astro";
+import FilterButton from "../components/pages/sell-product/FilterButton.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="CodeMart | Sell">
-    <div class="mx-60 my-50 px-4 py-5 sm:p-6">
+    <div class="mx-60 my-24 px-4 py-5 sm:p-6">
         <div class="grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-3">
                 <p>Add Tittle*</p>
@@ -13,7 +14,13 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="col-span-6 sm:col-span-3">
                 <p>Categories</p>
-                <FormInput type={'text'} placeholder={"Search Categorie..."}/>
+                <FormInput type={'text'} placeholder={"Search Categories..."}/>
+                <div class="flex flex-row justify-between mt-4">
+                    <FilterButton>C++</FilterButton>
+                    <FilterButton>JavaScript</FilterButton>
+                    <FilterButton>Python</FilterButton>
+                    <FilterButton>Java</FilterButton>
+                </div>
             </div>
         </div>
 
