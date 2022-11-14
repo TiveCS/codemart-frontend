@@ -1,26 +1,27 @@
 ---
-import Button from './Button.astro';
-import logo from '/assets/logo-colored.svg';
+import Button from "./Button.astro";
+import logo from "/assets/logo-colored.svg";
 ---
 
-<nav class='flex flex-row justify-between py-4 px-32 border-b shadow-md'>
-  <div class='flex flex-row justify-center items-center space-x-16'>
-    <a href='/codemart-frontend/'>
-      <img src={logo} alt='CodeMart' />
+<nav class="flex flex-row justify-between py-4 px-32 border-b shadow-md">
+  <div class="flex flex-row justify-center items-center space-x-16">
+    <a href="/codemart-frontend/">
+      <img src={logo} alt="CodeMart" />
     </a>
 
-    <div class='flex flex-row justify-between space-x-8 text-sm'>
-      <a href='/codemart-frontend/'>Home</a>
-      <a href='/codemart-frontend/sell'>Sell Product</a>
-      <a href='/codemart-frontend/browse'>Browse</a>
+    <div class="flex flex-row justify-between space-x-8 text-sm">
+      <a href="/codemart-frontend/">Home</a>
+      <a href="/codemart-frontend/sell">Sell Product</a>
+      <a href="/codemart-frontend/browse">Browse</a>
+      <a href="/codemart-frontend/forum">Forum</a>
     </div>
   </div>
-  <div class='flex flex-row justify-between items-center space-x-8'>
-    <a href='/codemart-frontend/login'>
-      <Button textSize={'sm'} type={'text'}>Login</Button>
+  <div class="flex flex-row justify-between items-center space-x-8">
+    <a href="/codemart-frontend/login">
+      <Button textSize={"sm"} type={"text"}>Login</Button>
     </a>
-    <a href='/codemart-frontend/register'>
-      <Button textSize={'sm'}>Join Now</Button>
+    <a href="/codemart-frontend/register">
+      <Button textSize={"sm"}>Join Now</Button>
     </a>
   </div>
 </nav>
