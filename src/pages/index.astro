@@ -1,32 +1,50 @@
 ---
-import Button from '../components/Button.astro';
-import FormInput from '../components/forms/FormInput.astro';
-import FeaturesPoint from '../components/pages/home/FeaturesPoint.astro';
-import Layout from '../layouts/Layout.astro';
+import Button from "../components/Button.astro";
+import FormInput from "../components/forms/FormInput.astro";
+import FeaturesPoint from "../components/pages/home/FeaturesPoint.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="CodeMart">
-  <section id="hero" class="flex flex-row justify-between items-center my-32 px-32">
+  <section
+    id="hero"
+    class="flex flex-row justify-between items-center my-32 px-32"
+  >
     <div class="max-w-2xl flex flex-col space-y-12">
       <div class="space-y-4">
         <h1 class="!leading-snug text-5xl font-bold">
-          Explore <span class="text-recandy-blue-600">Source Code</span> for your Business <span class="text-recandy-blue-600">Needs</span>
+          Explore <span class="text-recandy-blue-600">Source Code</span> for your
+          Business <span class="text-recandy-blue-600">Needs</span>
         </h1>
-        
-        <p class="text-recandy-gray-900 max-w-lg">CodeMart is Source Code marketplace that allow Developer post their works and Customer to buy Developer code based on their needs and requirements.</p>
+
+        <p class="text-recandy-gray-900 max-w-lg">
+          CodeMart is Source Code marketplace that allow Developer post their
+          works and Customer to buy Developer code based on their needs and
+          requirements.
+        </p>
       </div>
       <div class="space-x-8">
-        <Button>Buy a Source Code</Button>
-        <Button type={"outline"}>I'm a Developer</Button>
+        <a href="/codemart-frontend/browse">
+          <Button>Buy a Source Code</Button>
+        </a>
+        <a href="/codemart-frontend/sell">
+          <Button type={"outline"}>I'm a Developer</Button>
+        </a>
       </div>
     </div>
     <div>
-      <img class="max-w-md" src="./assets/img/codemart_explore.svg" alt="Explore">
+      <img
+        class="max-w-md"
+        src="./assets/img/codemart_explore.svg"
+        alt="Explore"
+      />
     </div>
   </section>
 
-  <section id="features" class="flex flex-col justify-center items-center space-y-16 pl-32 pr-16 pt-16 pb-24">
-
+  <section
+    id="features"
+    class="flex flex-col justify-center items-center space-y-16 pl-32 pr-16 pt-16 pb-24"
+  >
     <h2 class="font-semibold text-4xl text-center">We're here to Help</h2>
 
     <div class="flex flex-row space-x-8">
@@ -34,45 +52,47 @@ import Layout from '../layouts/Layout.astro';
         title="Explore Source Code"
         description="Explore Source Code from our marketplace and find the best one for your business needs."
         icon="home_src_icon"
-       />
-  
+      />
+
       <FeaturesPoint
-       title="Browse Source Code"
-       description="Find source code that suit with your needs by browsing posted source code by developer."
-       icon="home_search_icon"
+        title="Browse Source Code"
+        description="Find source code that suit with your needs by browsing posted source code by developer."
+        icon="home_search_icon"
       />
 
       <FeaturesPoint
         title="Pay Safely"
         description="Our payment system is using trusted Payment Gateway Midtrans."
         icon="home_safely_icon"
-       />
+      />
 
-       <FeaturesPoint
+      <FeaturesPoint
         title="Chat With Developer"
         description="We provide communication service for developer and customer that allow to communicate each other."
         icon="chat_icon"
-       />
+      />
     </div>
-    
-
   </section>
 
-  <section id="contact-us" class="py-32 pl-32 pr-48 bg-recandy-blue-50 flex flex-row justify-between items-center">
-
+  <section
+    id="contact-us"
+    class="py-32 pl-32 pr-48 bg-recandy-blue-50 flex flex-row justify-between items-center"
+  >
     <div>
       <h3 class="font-semibold text-4xl">Stay in Touch with Us</h3>
-      <br/>
+      <br />
       <p class="text-recandy-gray-900">Ask us question so we can help you</p>
     </div>
- 
-    <form action="" class="flex flex-col space-y-4 bg-recandy-white-0 rounded-md drop-shadow-xl px-8 py-12 w-1/3">
+
+    <form
+      action=""
+      class="flex flex-col space-y-4 bg-recandy-white-0 rounded-md drop-shadow-xl px-8 py-12 w-1/3"
+    >
       <FormInput placeholder={"Full Name"} />
       <FormInput placeholder={"Email"} />
       <FormInput placeholder={"Phone Number"} />
       <FormInput placeholder={"Subject"} />
-      <Button size={"large"} textSize={'sm'}>Submit</Button>
+      <Button size={"large"} textSize={"sm"}>Submit</Button>
     </form>
-
   </section>
 </Layout>
