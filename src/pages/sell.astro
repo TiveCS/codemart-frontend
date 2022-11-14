@@ -13,15 +13,9 @@ import Layout from "../layouts/Layout.astro";
         <p>Add Title*</p>
         <FormInput type={"text"} placeholder={"Add Title"} />
       </div>
-      <div class="col-span-6 sm:col-span-3">
 
-        <CategoryField client:idle>
-          <FormInput
-            type={"text"}
-            placeholder={"Search Categories..."}
-            slot="field-slot"
-          />
-        </CategoryField>
+      <div class="col-span-6 sm:col-span-3">
+        <CategoryField client:idle />
       </div>
     </div>
 
